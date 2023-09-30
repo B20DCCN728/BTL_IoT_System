@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="./icons/fontawesome-free-6.4.0-web/css/all.min.css"> 
+    <link rel="icon" href="./img/photo_2023-02-16_01-36-26.jpg">
+    <link rel="stylesheet" href="/dataflow2.css">
+    <title>Dashboard</title>
+</head>
+
+<body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+    <div class="container">
+        <div class="topbar">
+            <div class="logo">
+                <h2>Nguyễn Hoàng Việt </h2>
+            </div>
+            <div class="search">
+                <input type="text" name="search" placeholder="Tìm kiếm ở đây">
+                <label for="search"><i class="fas fa-search"></i></label>
+            </div>
+            <i class="fas fa-bell"></i>
+            <div class="user">
+                <img src="img/photo_2023-02-16_01-36-26.jpg" alt="Nguyễn Hoàng Việt">
+            </div>
+        </div>
+        <div class="sidebar">
+            <ul>
+                <li>
+                    <a href="/index.html">
+                        <i class="fas fa-th-large"></i>
+                        <div>Dashboard</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fa-regular fa-user"></i>                        
+                        <div>Thông tin cá nhân</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="/dataflow.html">
+                        <i class="fas fa-chalkboard-teacher"></i>
+                        <div>Thông tin cảm biến</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="/dataflow2.html">
+                        <i class="fa-solid fa-cloud"></i>
+                        <div>API</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fas fa-chart-bar"></i>
+                        <div>Chi tiết dự án</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fa-solid fa-database"></i>
+                        <div>Data Visualization</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fas fa-cog"></i>
+                        <div>Cài đặt</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fas fa-question"></i>
+                        <div>Trợ giúp</div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="main">
+            <!-- <div class="cards">
+                <div class="card">
+                    <div class="card-content">
+                        <div class="number">35°C</div>
+                        <div class="card-name">Nhiệt độ</div>
+                    </div>
+                    <div class="icon-box">
+                        <i class="fa-solid fa-temperature-high"></i>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-content">
+                        <div class="number">86%</div>
+                        <div class="card-name">Độ ẩm</div>
+                    </div>
+                    <div class="icon-box">
+                        <i class="fa-solid fa-umbrella"></i>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-content">
+                        <div class="number">800 lux</div>
+                        <div class="card-name">Độ sáng</div>
+                    </div>
+                    <div class="icon-box">
+                        <i class="fa-solid fa-lightbulb"></i>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-content">
+                        <div class="number">$4500</div>
+                        <div class="card-name">Earnings</div>
+                    </div>
+                    <div class="icon-box">
+                        <i class="fas fa-dollar-sign"></i>
+                    </div>
+                </div>
+            </div> -->
+            <div class="table">
+                <!-- <section class="table__header">
+                    <h1>Luồng dữ liệu</h1>
+                    <div class="input-group">
+                        <input type="search" placeholder="Search Data...">
+                        <img src="images/search.png" alt="">
+                    </div>
+                    <div class="export__file">
+                        <label for="export-file" class="export__file-btn" title="Export File"></label>
+                        <input type="checkbox" id="export-file">
+                        <div class="export__file-options">
+                            <label>Export As &nbsp; &#10140;</label>
+                            <label for="export-file" id="toPDF">PDF <img src="images/pdf.png" alt=""></label>
+                            <label for="export-file" id="toJSON">JSON <img src="images/json.png" alt=""></label>
+                            <label for="export-file" id="toCSV">CSV <img src="images/csv.png" alt=""></label>
+                            <label for="export-file" id="toEXCEL">EXCEL <img src="images/excel.png" alt=""></label>
+                        </div>
+                    </div>
+                </section> -->
+                <section class="table__body">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th> ID <span class="icon-arrow">&UpArrow;</span></th>
+                                <th> Thời gian <span class="icon-arrow">&UpArrow;</span></th>
+                                <th> Thiết bị <span class="icon-arrow">&UpArrow;</span></th>
+                                <th> Hoạt động <span class="icon-arrow">&UpArrow;</span></th>
+                                <th> Trạng thái <span class="icon-arrow">&UpArrow;</span></th>
+                            </tr>
+                        </thead>
+                        <tbody id="data-table">
+                        </tbody>
+                    </table>
+                </section>
+            </div>
+        </div>
+    </div>
+    <script src="/dataflow2.js"></script>
+    <script src="/index.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/chart.js@3.5.1/dist/chart.min.js"></script> -->
+</body>
+
+</html>
